@@ -103,7 +103,7 @@ function PipelineNode({ icon, title, sub, badge, badgeClass, status, output }) {
     <div className={`p-node ${status}`} style={{ width:'100%', maxWidth:560 }}>
       <div className="p-node-header">
         <div className="p-node-dot" />
-        <span style={{ fontSize:16 }}>{icon}</span>
+        <span style={{ fontSize:13, fontWeight:700, color:'var(--text-3)' }}>{icon}</span>
         <span className="p-node-title">{title}</span>
         {badge && <span className={`p-node-badge ${badgeClass}`}>{badge}</span>}
         <StatusIcon status={status} />
@@ -149,7 +149,7 @@ function VectorStoreNode({ status, ragInfo, chunkCount }) {
     <div className={`p-node ${status}`} style={{ width:'100%', maxWidth:560, borderStyle: status === 'idle' ? 'dashed' : 'solid' }}>
       <div className="p-node-header">
         <div className="p-node-dot" />
-        <span style={{ fontSize:16 }}>🗄</span>
+        <span style={{ fontSize:13, fontWeight:700, color:'var(--text-3)' }}>03</span>
         <span className="p-node-title">ChromaDB Vector Store</span>
         <span className={`p-node-badge badge-blue`}>RAG · text-embedding-3-small</span>
         <StatusIcon status={status} />
@@ -181,14 +181,14 @@ function AgentNode({ icon, title, badge, badgeClass, desc, status, output, retri
     <div className={`agent-node ${status}`}>
       <div className="agent-node-header">
         <div className="agent-node-dot" />
-        <span style={{ fontSize:13 }}>{icon}</span>
+        <span style={{ fontSize:11, fontWeight:700, color:'var(--text-3)' }}>{icon}</span>
         <span className="agent-node-title">{title}</span>
         {status === 'done' && <span style={{ color:'var(--green)', fontSize:12, marginLeft:'auto' }}>✓</span>}
       </div>
       {badge && <div style={{ marginBottom:6 }}><span className={`p-node-badge ${badgeClass}`}>{badge}</span></div>}
       {ragLabel && (
         <div style={{ fontSize:11, color:'var(--blue)', fontWeight:600, marginBottom:6, display:'flex', alignItems:'center', gap:4 }}>
-          <span>🔍</span>{ragLabel}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>{ragLabel}
         </div>
       )}
       <div className="agent-node-desc">{desc}</div>
@@ -262,7 +262,7 @@ export default function PipelineFlow({ state }) {
 
         {/* STEP 1 — Validator */}
         <PipelineNode
-          icon="🛡" title="Validation Gate"
+          icon="01" title="Validation Gate"
           sub={phase === 'validating' ? 'Checking document type…' : null}
           badge="Step 1 · Sequential" badgeClass="badge-slate"
           status={validatorStatus} output={validatorOut}
@@ -272,7 +272,7 @@ export default function PipelineFlow({ state }) {
 
         {/* STEP 2 — Orchestrator */}
         <PipelineNode
-          icon="🎯" title="Orchestrator"
+          icon="02" title="Orchestrator"
           sub={chunkCount
             ? `${chunkCount} chunk(s) · top-${ragInfo?.topK ?? '?'} RAG retrieval per agent`
             : phase === 'orchestrating' ? 'Planning agent dispatch…' : null}
@@ -300,7 +300,7 @@ export default function PipelineFlow({ state }) {
           </div>
           <div className="agents-cluster">
             <AgentNode
-              icon="📋" title="Clause Extractor"
+              icon="A" title="Clause Extractor"
               badge="structured reader" badgeClass="badge-blue"
               desc="Reads relevant clauses neutrally. Facts only."
               status={agentsStatus}
@@ -309,7 +309,7 @@ export default function PipelineFlow({ state }) {
               total={ragInfo?.totalChunks}
             />
             <AgentNode
-              icon="⚖" title="Risk Analyzer"
+              icon="B" title="Risk Analyzer"
               badge="defense lawyer" badgeClass="badge-red"
               desc="Finds dangerous clauses. Rates HIGH / MED / LOW."
               status={agentsStatus}
@@ -318,7 +318,7 @@ export default function PipelineFlow({ state }) {
               total={ragInfo?.totalChunks}
             />
             <AgentNode
-              icon="✍" title="Negotiation"
+              icon="C" title="Negotiation"
               badge="deal rewriter" badgeClass="badge-teal"
               desc="Rewrites risky clauses into balanced language."
               status={agentsStatus}
@@ -334,7 +334,7 @@ export default function PipelineFlow({ state }) {
 
         {/* STEP 5 — Merger */}
         <PipelineNode
-          icon="🔀" title="Result Merger"
+          icon="05" title="Result Merger"
           sub="Deduplicates outputs from all retrieved chunks per agent"
           badge="Step 5 · Sequential" badgeClass="badge-slate"
           status={mergerStatus} output={mergerOut}
@@ -344,7 +344,7 @@ export default function PipelineFlow({ state }) {
 
         {/* STEP 6 — Approach */}
         <PipelineNode
-          icon="💡" title="Approach Synthesizer"
+          icon="06" title="Approach Synthesizer"
           sub="Generates best-action recommendation from merged risk output"
           badge="Step 6 · Sequential" badgeClass="badge-slate"
           status={approachStatus} output={approachOut}

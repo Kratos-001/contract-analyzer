@@ -1,0 +1,36 @@
+SERVICE AGREEMENT
+
+This Agreement is entered into as of January 1, 2025 between ACME Corp ("Client") and DevStudio LLC ("Vendor").
+
+1. SERVICES
+Vendor shall provide software development services as requested by Client at any time and at any volume. Client may modify, expand, or reduce the scope of work at Client's sole discretion without notice to Vendor and without any compensation adjustment. Client is not obligated to provide specifications before requesting delivery.
+
+2. PAYMENT
+Client shall pay Vendor within 90 days of invoice submission. Late payments shall not incur any interest or penalties regardless of delay duration. Client reserves the right to withhold payment indefinitely if Client is dissatisfied with deliverables at Client's sole and absolute discretion. Client may request unlimited revisions before approving payment. Vendor may not suspend work due to non-payment.
+
+3. INTELLECTUAL PROPERTY
+All work product, deliverables, source code, documentation, and any other materials produced by Vendor under this Agreement shall be the exclusive property of Client upon creation, without further payment. This includes any pre-existing tools, frameworks, libraries, or proprietary methodologies used or incorporated by Vendor. Vendor irrevocably assigns all present and future intellectual property rights to Client worldwide.
+
+4. CONFIDENTIALITY AND NON-COMPETE
+Vendor shall maintain strict confidentiality of all Client information indefinitely with no time limit, even after termination. Vendor shall not work for, consult with, or assist any company that Client deems a competitor, for a period of 5 years post-termination, across all countries globally. Client shall determine what constitutes a competitor at its sole discretion at any time.
+
+5. LIABILITY
+Vendor's total aggregate liability under this Agreement shall not exceed $100 regardless of the nature or severity of the breach. Client may seek unlimited direct, indirect, consequential, punitive, and special damages from Vendor for any breach, regardless of foreseeability. Vendor waives any right to claim force majeure.
+
+6. TERMINATION
+Client may terminate this Agreement immediately at any time without cause and without notice. Vendor must provide 180 days written notice to terminate. Upon any termination, Vendor must refund all payments received in the previous 24 months and deliver all work in progress at no additional charge. Vendor forfeits any outstanding unpaid invoices upon termination.
+
+7. INDEMNIFICATION
+Vendor shall indemnify, defend, and hold harmless Client from any and all claims, losses, damages, costs, and expenses (including attorney fees) arising from or related to Vendor's performance, whether or not Vendor was negligent. This indemnification shall survive termination indefinitely.
+
+8. GOVERNING LAW AND DISPUTE RESOLUTION
+This Agreement shall be governed by the law of the jurisdiction selected by Client at the time any dispute arises. All disputes shall be resolved through arbitration conducted at a location chosen by Client. Vendor waives its right to a jury trial and to participate in any class action.
+
+9. AMENDMENTS
+Client may amend, modify, or replace any term of this Agreement at any time by providing written notice to Vendor. Vendor's continued performance of services constitutes acceptance of all amendments.
+
+10. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the parties and supersedes all prior negotiations. Vendor acknowledges it has not relied on any representations not expressly stated herein.
+
+Client: ACME Corp
+Vendor: DevStudio LLC

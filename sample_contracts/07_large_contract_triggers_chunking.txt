@@ -1,0 +1,80 @@
+MASTER SOFTWARE DEVELOPMENT AND LICENSING AGREEMENT
+
+This Master Software Development and Licensing Agreement ("Agreement") is entered into as of July 1, 2025 between MegaCorp Global Holdings Inc., a Delaware corporation with principal offices at 1 Enterprise Plaza, New York, NY 10001 ("Company") and CodeForge Technologies LLC, a Texas limited liability company with principal offices at 500 Innovation Drive, Austin, TX 78702 ("Developer").
+
+RECITALS
+WHEREAS, Company desires to engage Developer to design, develop, and deliver certain proprietary software systems, and to license certain pre-existing Developer technology;
+WHEREAS, Developer has the expertise and capacity to perform such services;
+NOW THEREFORE, in consideration of the mutual promises set forth herein, the parties agree as follows:
+
+ARTICLE 1 — DEFINITIONS
+1.1 "Deliverables" means all software, code, documentation, designs, specifications, and other work product created by Developer specifically under a Statement of Work.
+1.2 "Developer IP" means all technology, tools, frameworks, libraries, methodologies, and know-how owned by Developer prior to this Agreement or developed independently by Developer outside the scope of this Agreement.
+1.3 "Background IP" means pre-existing intellectual property of either party.
+1.4 "Project IP" means all intellectual property created solely under a Statement of Work and paid for in full by Company.
+1.5 "Confidential Information" means non-public information disclosed by one party to the other that is designated as confidential or should reasonably be understood to be confidential.
+1.6 "Statement of Work" or "SOW" means a written document executed by both parties describing specific services, deliverables, timelines, and fees.
+
+ARTICLE 2 — SERVICES AND STATEMENTS OF WORK
+2.1 Services. Developer shall provide software development and consulting services as described in mutually agreed SOWs executed from time to time.
+2.2 SOW Requirements. Each SOW shall specify: (a) description of services; (b) deliverables and acceptance criteria; (c) project timeline and milestones; (d) fees and payment schedule; (e) any special terms. SOWs become binding only when signed by authorized representatives of both parties.
+2.3 Change Orders. Any change to a signed SOW requires a written change order signed by both parties. Developer is not obligated to perform out-of-scope work prior to signing a change order. If Company requests changes that materially increase scope, Developer shall provide a written estimate within 10 business days.
+2.4 Subcontractors. Developer may engage qualified subcontractors with Company's prior written consent, which shall not be unreasonably withheld. Developer shall remain responsible for subcontractor performance and shall ensure subcontractors are bound by confidentiality obligations equivalent to those herein.
+
+ARTICLE 3 — FEES AND PAYMENT
+3.1 Fees. Company shall pay Developer fees as set forth in each SOW. Unless otherwise stated, fees are fixed and not subject to reduction based on estimated hours.
+3.2 Invoicing. Developer shall submit invoices upon reaching each payment milestone defined in the applicable SOW. Invoices shall be paid by Company within 30 days of receipt.
+3.3 Disputed Invoices. If Company disputes any invoice in good faith, it shall: (a) pay the undisputed portion within 30 days; and (b) notify Developer in writing within 10 business days of the specific basis for the dispute. The parties shall resolve disputes through good-faith negotiation within 30 days.
+3.4 Late Payments. Amounts not disputed and not paid within 30 days shall accrue interest at 1.5% per month. Developer may suspend services upon 10 business days written notice if undisputed amounts remain unpaid for more than 45 days.
+3.5 Expenses. Developer shall be reimbursed for pre-approved out-of-pocket expenses actually incurred, supported by receipts. Travel must be pre-approved in writing.
+3.6 Taxes. Each party is responsible for its own income taxes. If Company is required by law to withhold taxes, it shall provide Developer with appropriate documentation.
+
+ARTICLE 4 — INTELLECTUAL PROPERTY
+4.1 Developer IP. Developer retains all right, title, and interest in Developer IP. Developer grants Company a non-exclusive, non-transferable, royalty-free license to use Developer IP solely to the extent incorporated in Deliverables and necessary to use the Deliverables for Company's internal business purposes.
+4.2 Project IP Assignment. Upon full payment of all fees under the applicable SOW, Developer assigns to Company all right, title, and interest in Project IP, including all copyrights, patents, trade secrets, and other intellectual property rights therein, worldwide.
+4.3 Moral Rights Waiver. Developer irrevocably waives any moral rights or equivalent rights in Project IP to the fullest extent permitted by applicable law.
+4.4 Residual Knowledge. Developer may use and apply general knowledge, skills, experience, and ideas retained in the unaided memories of Developer's personnel who have had access to Company's Confidential Information, provided Developer does not use or disclose any specifically identified Confidential Information.
+4.5 License to Developer IP. To the extent any Deliverable incorporates Developer IP that is necessary for Company to fully use the Deliverable, Developer grants Company a perpetual, irrevocable, worldwide, royalty-free, non-exclusive license to such Developer IP for that purpose only.
+
+ARTICLE 5 — CONFIDENTIALITY
+5.1 Obligations. Each party (as Receiving Party) shall: (a) keep the Disclosing Party's Confidential Information strictly confidential; (b) use it only for purposes of this Agreement; (c) not disclose it to third parties without prior written consent; (d) protect it with at least the same care it uses for its own confidential information, no less than reasonable care.
+5.2 Permitted Disclosures. A Receiving Party may disclose Confidential Information to its employees, contractors, and advisors who have a legitimate need to know and are bound by equivalent confidentiality obligations.
+5.3 Exclusions. Confidentiality obligations do not apply to information that: (a) is or becomes publicly available without breach; (b) was already known to the Receiving Party; (c) is independently developed; (d) is received from a third party without restriction.
+5.4 Legal Compulsion. If legally compelled to disclose, the Receiving Party shall give prompt notice and cooperate in seeking a protective order.
+5.5 Duration. Confidentiality obligations survive termination for 5 years. Obligations relating to trade secrets survive indefinitely.
+
+ARTICLE 6 — WARRANTIES
+6.1 Developer Warranties. Developer represents and warrants that: (a) Developer has authority to enter into this Agreement; (b) services will be performed in a professional and workmanlike manner consistent with industry standards; (c) Deliverables will materially conform to the specifications in the applicable SOW; (d) Deliverables will not knowingly infringe third-party intellectual property rights; (e) Developer has not entered into any agreements that would conflict with this Agreement.
+6.2 Company Warranties. Company represents and warrants that: (a) Company has authority to enter into this Agreement; (b) Company Data and materials provided to Developer do not infringe third-party rights; (c) Company's use of Deliverables will comply with applicable law.
+6.3 Warranty Period. Developer's warranty for Deliverables extends for 90 days following acceptance. During this period, Developer shall correct material defects at no additional charge. This warranty does not cover issues caused by unauthorized modifications, misuse, or third-party software.
+6.4 DISCLAIMER. EXCEPT AS EXPRESSLY SET FORTH HEREIN, NEITHER PARTY MAKES ANY WARRANTIES, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+ARTICLE 7 — LIMITATION OF LIABILITY
+7.1 Mutual Cap. Each party's total aggregate liability to the other under this Agreement shall not exceed the total fees paid or payable under all SOWs in the 12 months preceding the claim giving rise to liability.
+7.2 Exclusion of Consequential Damages. Neither party shall be liable for indirect, incidental, consequential, special, or punitive damages, including lost profits, arising from this Agreement, even if advised of the possibility of such damages.
+7.3 Exceptions. The limitations in Sections 7.1 and 7.2 do not apply to: (a) fraud or willful misconduct; (b) indemnification obligations under Article 8; (c) breach of confidentiality obligations in Article 5; (d) infringement of intellectual property rights.
+
+ARTICLE 8 — INDEMNIFICATION
+8.1 Developer Indemnification. Developer shall indemnify, defend, and hold harmless Company from third-party claims arising from: (a) Developer's gross negligence or willful misconduct; (b) infringement of third-party intellectual property rights by Deliverables (excluding infringement caused by Company's modifications or combination with third-party materials); (c) Developer's material breach of its warranties.
+8.2 Company Indemnification. Company shall indemnify, defend, and hold harmless Developer from third-party claims arising from: (a) Company's gross negligence or willful misconduct; (b) Company Data or materials provided to Developer that infringe third-party rights; (c) Company's use of Deliverables in violation of applicable law.
+8.3 Indemnification Procedure. The indemnified party shall: (a) promptly notify the indemnifying party; (b) grant control of the defense and settlement to the indemnifying party; (c) provide reasonable cooperation. The indemnifying party shall not settle any claim in a manner that imposes obligations on the indemnified party without consent.
+
+ARTICLE 9 — TERM AND TERMINATION
+9.1 Term. This Agreement commences on the Effective Date and continues for 3 years, automatically renewing for successive 1-year terms unless either party provides 60 days written notice of non-renewal.
+9.2 Termination for Cause. Either party may terminate this Agreement immediately upon written notice if the other party: (a) materially breaches any provision and fails to cure within 30 days of written notice; (b) becomes insolvent, files for bankruptcy, or makes an assignment for the benefit of creditors.
+9.3 Termination for Convenience. Company may terminate this Agreement or any SOW for convenience upon 45 days written notice. In such event, Company shall pay Developer for all work completed through termination plus reasonable wind-down costs, not to exceed 15% of the remaining SOW value.
+9.4 Effect of Termination. Upon termination, each party shall return or destroy the other's Confidential Information, Developer shall deliver all completed work and work in progress to Company, and Company shall pay all amounts due through termination. Articles 4, 5, 7, 8, and 10 survive termination.
+
+ARTICLE 10 — GENERAL PROVISIONS
+10.1 Governing Law. This Agreement is governed by the laws of the State of New York, without regard to conflict of laws principles.
+10.2 Dispute Resolution. Disputes shall first be referred to senior management of each party for good-faith negotiation for 30 days. Unresolved disputes shall be settled by binding arbitration under AAA Commercial Arbitration Rules, with a single arbitrator, in New York, New York. The arbitrator may award any remedy available at law or equity. Judgment on the award may be entered in any court having jurisdiction.
+10.3 Force Majeure. Neither party is liable for delays caused by events beyond its reasonable control, including natural disasters, government actions, pandemics, or internet outages, provided it gives prompt notice and uses reasonable efforts to mitigate.
+10.4 Assignment. Neither party may assign this Agreement without the other's prior written consent, not to be unreasonably withheld, except that either party may assign to an affiliate or in connection with a merger, acquisition, or sale of substantially all its assets, provided the assignee assumes all obligations.
+10.5 Independent Contractors. Developer is an independent contractor. Nothing herein creates an employment, partnership, or joint venture relationship. Developer's personnel are not Company employees and are not entitled to Company employee benefits.
+10.6 Notices. Notices shall be in writing and delivered by email (with read receipt), overnight courier, or certified mail to the addresses on the signature page.
+10.7 Severability. If any provision is found unenforceable, it shall be modified to the minimum extent necessary to make it enforceable, and the remainder of the Agreement continues in full force.
+10.8 Entire Agreement. This Agreement, together with all SOWs, constitutes the entire agreement and supersedes all prior discussions and agreements regarding its subject matter. Amendments require a written document signed by both parties.
+
+Company: MegaCorp Global Holdings Inc.
+Developer: CodeForge Technologies LLC
+Date: July 1, 2025

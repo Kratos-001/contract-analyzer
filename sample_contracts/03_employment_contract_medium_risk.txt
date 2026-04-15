@@ -1,0 +1,41 @@
+EMPLOYMENT AGREEMENT
+
+This Employment Agreement ("Agreement") is made and entered into as of February 1, 2025 by and between NovaTech Solutions Inc. ("Employer") and Jordan Lee ("Employee").
+
+1. POSITION AND DUTIES
+Employer agrees to employ Employee as Senior Software Engineer. Employee shall perform duties as assigned by Employer from time to time. Employer reserves the right to change Employee's title, duties, reporting structure, and work location at Employer's sole discretion without Employee's consent and without additional compensation.
+
+2. COMPENSATION
+Employee shall receive a base salary of $120,000 per year, paid bi-weekly. Employer may adjust Employee's salary downward at any time with 30 days notice. Employee is eligible for an annual discretionary bonus at Employer's sole discretion; no bonus is guaranteed. All overtime work shall be compensated at the standard rate only, regardless of hours worked beyond 40 per week.
+
+3. BENEFITS
+Employee shall be entitled to participate in Employer's standard benefits package as it exists from time to time. Employer may modify, reduce, or eliminate any benefits at any time without notice and without Employee's consent. Employer's benefits policies, as amended from time to time, are incorporated by reference.
+
+4. AT-WILL EMPLOYMENT
+Employment under this Agreement is at-will. Either party may terminate the employment relationship at any time, with or without cause, and with or without notice. However, if Employee resigns, Employee must provide 60 days written notice; failure to do so results in forfeiture of all accrued but unpaid vacation.
+
+5. INTELLECTUAL PROPERTY
+All inventions, discoveries, developments, improvements, and works of authorship that Employee conceives or creates during the term of employment — whether during work hours or personal time, whether or not using Employer's resources — shall be the exclusive property of Employer. Employee irrevocably assigns all rights, title, and interest in such work to Employer. Employee must disclose all such inventions to Employer immediately upon creation.
+
+6. CONFIDENTIALITY
+Employee shall not disclose any confidential or proprietary information of Employer during or after employment. This obligation has no time limit. Confidential information includes any information related to Employer's business, clients, technology, or strategy, regardless of whether it is marked as confidential.
+
+7. NON-COMPETE AND NON-SOLICITATION
+For a period of 2 years following termination of employment for any reason, Employee shall not:
+(a) Work for, consult with, or have any ownership interest in any company that competes with Employer anywhere in the United States;
+(b) Solicit any of Employer's clients, customers, or business partners for any competing business;
+(c) Solicit, recruit, or hire any of Employer's employees or contractors.
+Employer shall have the right to seek injunctive relief and damages for any breach of this section.
+
+8. ARBITRATION
+Any dispute arising out of or related to this Agreement or Employee's employment shall be resolved through binding arbitration under the rules of the American Arbitration Association. Employee waives the right to a jury trial and to participate in any class or collective action. All arbitration proceedings shall be confidential.
+
+9. GOVERNING LAW
+This Agreement shall be governed by the laws of the State of California.
+
+10. ENTIRE AGREEMENT
+This Agreement constitutes the entire agreement between the parties regarding Employee's employment and supersedes all prior representations, negotiations, and agreements.
+
+Employer: NovaTech Solutions Inc.
+Employee: Jordan Lee
+Date: February 1, 2025

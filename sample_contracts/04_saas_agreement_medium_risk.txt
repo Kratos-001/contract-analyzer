@@ -1,0 +1,37 @@
+SOFTWARE AS A SERVICE (SAAS) SUBSCRIPTION AGREEMENT
+
+This SaaS Subscription Agreement ("Agreement") is entered into as of April 10, 2025 between CloudBase Inc. ("Provider") and RetailPlus Enterprises ("Customer").
+
+1. SERVICE DESCRIPTION
+Provider will make the CloudBase Analytics Platform ("Service") available to Customer via the internet during the Subscription Term. Provider may modify, update, or discontinue any feature of the Service at any time without notice to Customer. Provider does not guarantee that any specific feature will remain available throughout the Subscription Term.
+
+2. SUBSCRIPTION TERM AND FEES
+The initial Subscription Term is 12 months commencing on the Effective Date. Fees are $4,500 per month, billed monthly in advance. Provider may increase fees at any time upon 15 days written notice to Customer. If Customer objects to a fee increase, Customer's sole remedy is to terminate the Agreement; no refunds shall be issued for prepaid periods.
+
+3. PAYMENT TERMS
+Customer shall pay all invoices within 15 days of the invoice date. Late payments shall accrue interest at the rate of 2% per month (24% per annum). Provider may suspend Customer's access to the Service immediately upon payment default without prior notice. Customer shall reimburse Provider for all costs of collection including attorney fees.
+
+4. DATA AND PRIVACY
+Customer retains ownership of all data it submits to the Service ("Customer Data"). Provider may access, process, and analyze Customer Data to provide the Service and to improve Provider's products and services. Provider may share aggregated, anonymized Customer Data with third parties. Provider shall implement reasonable security measures but does not guarantee the security of Customer Data. Provider's liability for any data breach is capped at one month's subscription fee.
+
+5. UPTIME AND SUPPORT
+Provider targets 99% uptime on a monthly basis but does not guarantee any specific uptime. Scheduled maintenance windows are excluded from uptime calculations. Provider's sole obligation for downtime beyond 1% in a calendar month is a service credit of 10% of that month's fee. Support is available Monday through Friday, 9am to 5pm Pacific Time. Critical issues will be addressed within 48 business hours.
+
+6. INTELLECTUAL PROPERTY
+Provider retains all rights, title, and interest in the Service, including all underlying technology, algorithms, and improvements. Nothing in this Agreement grants Customer any ownership interest in the Service. Any feedback or suggestions provided by Customer may be used by Provider without restriction or compensation.
+
+7. LIMITATION OF LIABILITY
+PROVIDER'S TOTAL LIABILITY TO CUSTOMER FOR ALL CLAIMS ARISING UNDER THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID IN THE THREE (3) MONTHS IMMEDIATELY PRECEDING THE CLAIM. IN NO EVENT SHALL PROVIDER BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY THEREOF. THIS LIMITATION APPLIES TO ALL THEORIES OF LIABILITY.
+
+8. INDEMNIFICATION
+Customer shall indemnify and hold Provider harmless from any claims arising from Customer's use of the Service, Customer Data, or Customer's breach of this Agreement. Provider's indemnification obligations are limited to claims that the Service infringes a valid U.S. patent or copyright, subject to the liability cap in Section 7.
+
+9. TERMINATION
+Provider may terminate this Agreement immediately if Customer breaches any provision and fails to cure such breach within 5 business days of notice. Customer may terminate this Agreement at any time upon 60 days written notice; however, Customer shall remain obligated to pay all fees through the end of the current Subscription Term. No refunds are available upon termination.
+
+10. GOVERNING LAW
+This Agreement is governed by the laws of the State of Delaware. Any dispute shall be resolved by binding arbitration in San Francisco, California.
+
+Provider: CloudBase Inc.
+Customer: RetailPlus Enterprises
+Date: April 10, 2025

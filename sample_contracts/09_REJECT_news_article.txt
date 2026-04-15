@@ -1,0 +1,27 @@
+TECH GIANT ANNOUNCES RECORD QUARTERLY EARNINGS AMID AI BOOM
+
+SAN FRANCISCO — In what analysts are calling a historic quarter for the technology sector, Nexus Technologies reported revenues of $94.3 billion for Q2 2025, a 22% year-over-year increase that shattered Wall Street's already-optimistic projections. The company's stock surged 8.4% in after-hours trading following the announcement.
+
+CEO Margaret Holloway attributed the record performance to the company's aggressive expansion into artificial intelligence infrastructure and cloud computing services. "This quarter validates the investments we made two years ago when others were skeptical," Holloway told analysts on an earnings call Tuesday afternoon. "We are not slowing down."
+
+The results were driven largely by the company's cloud division, Nexus Cloud, which posted $38.7 billion in revenue, up 34% from the same period last year. The division now serves more than 2.4 million enterprise customers globally. AI-related services, including Nexus's large language model APIs and generative AI tooling, contributed an estimated $12 billion in revenue — a segment that did not exist two years ago.
+
+Analysts noted that Nexus's advertising business also showed unexpected resilience, growing 14% to $29.1 billion despite ongoing concerns about privacy regulations in the European Union and a slowdown in digital ad spend among small and medium-sized businesses. The company credited improvements to its ad targeting technology, which now incorporates on-device machine learning models to reduce reliance on third-party data.
+
+Hardware sales, however, were a relative bright spot with asterisks. Revenue from consumer devices fell 6% year-over-year to $12.8 billion, as the company faced stiff competition from lower-cost Asian manufacturers and a broader consumer electronics slowdown. Holloway acknowledged the headwind but noted that the company's subscription and services revenue attached to hardware devices grew 19%, partially offsetting the volume decline.
+
+REGULATORY SCRUTINY REMAINS A CONCERN
+Not all news from the quarter was positive. Nexus faces antitrust investigations in six jurisdictions, including a landmark case brought by the U.S. Department of Justice alleging the company illegally monopolized cloud infrastructure markets. The DOJ complaint, filed last spring, claims Nexus used exclusive contracts and predatory pricing to foreclose competition, costing enterprise customers an estimated $40 billion in overcharges over five years. Nexus has denied the allegations.
+
+The European Commission separately announced this month that it had opened a formal investigation into Nexus's AI development practices under the EU AI Act, the world's first comprehensive regulation of artificial intelligence. Commission officials said they are examining whether Nexus's foundation models comply with transparency and safety requirements that took effect in January.
+
+Nexus set aside $4.2 billion in legal reserves during the quarter, a figure that some analysts said may prove insufficient if the DOJ case reaches trial.
+
+OUTLOOK AND FORWARD GUIDANCE
+For the third quarter of 2025, Nexus guided revenues of $96 billion to $99 billion, implying continued growth of 18% to 21%. The company raised its full-year capital expenditure guidance to $52 billion, up from $44 billion, with the bulk of spending directed toward data center construction and AI chip procurement. Holloway said the company had secured multi-year commitments with semiconductor suppliers to ensure supply chain stability.
+
+"The demand for compute is not slowing. Every enterprise we talk to is in some stage of AI deployment," said Chief Financial Officer Raymond Kwon. "We are building for a world that needs ten times the infrastructure it has today."
+
+Shares of Nexus Technologies closed at $312.40 on Tuesday before the earnings release, and rose to $338.65 in extended trading, bringing the company's market capitalization to approximately $2.1 trillion.
+
+— Reporting by the Financial Desk

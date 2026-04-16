@@ -2,17 +2,17 @@ import { useState } from 'react'
 import { parseApproach } from '../utils/parse.js'
 
 /* ── Phase ordering ─────────────────────────────────────────────── */
-const ORDER = ['idle','validating','orchestrating','embedding','agents','merging','approach','done']
+const ORDER = ['idle','orchestrating','embedding','agents','merging','approach','done']
 
 function phaseIdx(p) {
-  if (p === 'rejected' || p === 'error') return ORDER.indexOf('validating')
+  if (p === 'rejected' || p === 'error') return ORDER.indexOf('orchestrating')
   return ORDER.indexOf(p)
 }
 
 function nodeStatus(nodePhase, currentPhase) {
   if (currentPhase === 'idle') return 'idle'
-  if (currentPhase === 'error')    return nodePhase === 'validating' ? 'error'    : 'idle'
-  if (currentPhase === 'rejected') return nodePhase === 'validating' ? 'rejected' : 'idle'
+  if (currentPhase === 'error')    return nodePhase === 'orchestrating' ? 'error'    : 'idle'
+  if (currentPhase === 'rejected') return nodePhase === 'orchestrating' ? 'rejected' : 'idle'
   const ci = phaseIdx(currentPhase)
   const ni = ORDER.indexOf(nodePhase)
   if (ci < ni) return 'idle'
@@ -149,7 +149,7 @@ function VectorStoreNode({ status, ragInfo, chunkCount }) {
     <div className={`p-node ${status}`} style={{ width:'100%', maxWidth:560, borderStyle: status === 'idle' ? 'dashed' : 'solid' }}>
       <div className="p-node-header">
         <div className="p-node-dot" />
-        <span style={{ fontSize:13, fontWeight:700, color:'var(--text-3)' }}>03</span>
+        <span style={{ fontSize:13, fontWeight:700, color:'var(--text-3)' }}>02</span>
         <span className="p-node-title">ChromaDB Vector Store</span>
         <span className={`p-node-badge badge-blue`}>RAG · text-embedding-3-small</span>
         <StatusIcon status={status} />
@@ -214,14 +214,12 @@ function AgentNode({ icon, title, badge, badgeClass, desc, status, output, retri
 export default function PipelineFlow({ state }) {
   const { phase, data } = state
 
-  const validatorStatus    = nodeStatus('validating',    phase)
   const orchestratorStatus = nodeStatus('orchestrating', phase)
   const embeddingStatus    = nodeStatus('embedding',     phase)
   const agentsStatus       = nodeStatus('agents',        phase)
   const mergerStatus       = nodeStatus('merging',       phase)
   const approachStatus     = nodeStatus('approach',      phase)
 
-  const arrow1 = arrowStatus('orchestrating', phase)  // validator → orchestrator
   const arrow2 = arrowStatus('embedding',     phase)  // orchestrator → chroma
   const arrow3 = arrowStatus('agents',        phase)  // chroma → agents (fork)
   const arrow4 = arrowStatus('merging',       phase)  // agents → merger (join)
@@ -237,11 +235,11 @@ export default function PipelineFlow({ state }) {
     approachOut = a.verdict ? `Verdict: ${a.verdict}\n\n${a.reasoning}` : data.approach.slice(0, 300)
   }
 
-  // Validator output
-  const validatorOut = data
+  // Orchestrator output
+  const orchestratorOut = data
     ? data.valid
-      ? `✓ Valid legal contract\nType: ${data.documentType}`
-      : `✗ Not a legal contract\nType: ${data.documentType}\n${data.reason}`
+      ? `✓ Valid legal contract\nType: ${data.documentType}\n\n${data.orchestratorPlan}`
+      : `✗ Not a legal contract\nType: ${data.documentType}\nReason: ${data.reason}`
     : null
 
   // Merger output
@@ -260,24 +258,14 @@ export default function PipelineFlow({ state }) {
 
       <div className="pipeline">
 
-        {/* STEP 1 — Validator */}
+        {/* STEP 1 — Orchestrator Gate */}
         <PipelineNode
-          icon="01" title="Validation Gate"
-          sub={phase === 'validating' ? 'Checking document type…' : null}
-          badge="Step 1 · Sequential" badgeClass="badge-slate"
-          status={validatorStatus} output={validatorOut}
-        />
-
-        <Connector status={arrow1} />
-
-        {/* STEP 2 — Orchestrator */}
-        <PipelineNode
-          icon="02" title="Orchestrator"
+          icon="01" title="Orchestrator Gate"
           sub={chunkCount
             ? `${chunkCount} chunk(s) · top-${ragInfo?.topK ?? '?'} RAG retrieval per agent`
-            : phase === 'orchestrating' ? 'Planning agent dispatch…' : null}
-          badge="Step 2 · Sequential" badgeClass="badge-slate"
-          status={orchestratorStatus} output={data?.orchestratorPlan}
+            : phase === 'orchestrating' ? 'Validating document and planning agent dispatch…' : null}
+          badge="Step 1 · Sequential" badgeClass="badge-slate"
+          status={orchestratorStatus} output={orchestratorOut}
         />
 
         <Connector status={arrow2} />
@@ -292,11 +280,11 @@ export default function PipelineFlow({ state }) {
         {/* Fork connector: ChromaDB → 3 agents */}
         <ForkConnector status={arrow3} />
 
-        {/* STEP 4 — Parallel agents */}
+        {/* STEP 3 — Parallel agents */}
         <div style={{ width:'100%', maxWidth:560 }}>
           <div style={{ fontSize:11, fontWeight:600, textTransform:'uppercase', letterSpacing:'0.5px',
                         color:'var(--text-3)', marginBottom:10, textAlign:'center' }}>
-            Step 4 · All 3 agents run in parallel on RAG-retrieved chunks
+            Step 3 · All 3 agents run in parallel on RAG-retrieved chunks
           </div>
           <div className="agents-cluster">
             <AgentNode
@@ -332,21 +320,21 @@ export default function PipelineFlow({ state }) {
         {/* Join connector: 3 agents → merger */}
         <JoinConnector status={arrow4} />
 
-        {/* STEP 5 — Merger */}
+        {/* STEP 4 — Merger */}
         <PipelineNode
-          icon="05" title="Result Merger"
+          icon="04" title="Result Merger"
           sub="Deduplicates outputs from all retrieved chunks per agent"
-          badge="Step 5 · Sequential" badgeClass="badge-slate"
+          badge="Step 4 · Sequential" badgeClass="badge-slate"
           status={mergerStatus} output={mergerOut}
         />
 
         <Connector status={arrow5} />
 
-        {/* STEP 6 — Approach */}
+        {/* STEP 5 — Approach */}
         <PipelineNode
-          icon="06" title="Approach Synthesizer"
+          icon="05" title="Approach Synthesizer"
           sub="Generates best-action recommendation from merged risk output"
-          badge="Step 6 · Sequential" badgeClass="badge-slate"
+          badge="Step 5 · Sequential" badgeClass="badge-slate"
           status={approachStatus} output={approachOut}
         />
 

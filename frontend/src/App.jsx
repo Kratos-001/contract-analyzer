@@ -5,7 +5,7 @@ import ResultsPanel from './components/ResultsPanel.jsx'
 
 /*
   Phase machine:
-  idle → validating → orchestrating → embedding → agents → merging → approach → done
+  idle → orchestrating → embedding → agents → merging → approach → done
                    ↘ rejected
                    ↘ error
 */
@@ -28,11 +28,10 @@ export default function App() {
 
   const handleAnalyze = useCallback(async (formData) => {
     clearTimers()
-    setState({ phase: 'validating', data: null, error: null })
+    setState({ phase: 'orchestrating', data: null, error: null })
     setActiveTab('analysis') // Reset to default tab
 
     // Simulate intermediate phases while the HTTP call is in-flight
-    later(() => setState(s => s.phase === 'validating'    ? { ...s, phase: 'orchestrating' } : s), 2200)
     later(() => setState(s => s.phase === 'orchestrating' ? { ...s, phase: 'embedding'     } : s), 3800)
     later(() => setState(s => s.phase === 'embedding'     ? { ...s, phase: 'agents'        } : s), 5200)
 

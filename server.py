@@ -314,25 +314,23 @@ async def call_openai(system_prompt: str, user_message: str,
     return result
 
 # ─── System Prompts ────────────────────────────────────────────────────────────
-VALIDATION_SYSTEM = """You are a strict document validation gateway for a legal contract analyzer.
-Your ONLY job is to decide if the uploaded document is a legal contract or agreement.
-Valid: service agreement, NDA, employment contract, SaaS agreement, lease agreement, partnership deed, vendor contract, licensing agreement, or any formal legal contract between parties with obligations and terms.
-Invalid: recipes, essays, news articles, stories, resumes, code files, emails, chat logs, invoices without contract terms, academic papers, instruction manuals.
+def orchestrator_system(chunk_count: int, top_k: int) -> str:
+    return f"""You are a strict document validation gateway AND a legal contract review orchestrator.
+First, decide if the uploaded document is a valid legal contract.
+Valid: service agreement, NDA, employment contract, SaaS agreement, lease agreement, partnership deed, vendor contract, etc.
+Invalid: recipes, essays, news articles, stories, resumes, code files, emails, chat logs, academic papers.
+
+If VALID=NO, do not output a PLAN.
+If VALID=YES, the contract was split into {chunk_count} chunk(s) and embedded into ChromaDB. 
+You are managing 3 specialist agents (Clause Extractor, Risk Analyzer, Negotiation Agent). Each will retrieve the {top_k} most relevant chunks via RAG.
+Provide a 2-3 sentence PLAN explaining what each agent receives and why RAG-based retrieval ensures coverage.
+
 Respond ONLY in this exact format:
 VALID: [YES or NO]
 DOCUMENT_TYPE: [what the document actually is]
 REASON: [one sentence]
-MISSING: [if NO — what makes it not a contract. If YES — write NONE]"""
-
-def orchestrator_system(chunk_count: int, top_k: int) -> str:
-    return f"""You are a legal contract review orchestrator managing 3 specialist agents:
-1. Clause Extractor — neutral structured reader. Maps every clause. Facts only.
-2. Risk Analyzer — adversarial defense lawyer. Finds dangerous, one-sided clauses. Rates HIGH/MEDIUM/LOW.
-3. Negotiation Agent — constructive deal-maker. Rewrites dangerous clauses into fair language.
-The contract was split into {chunk_count} chunk(s) via recursive character text splitting.
-ChromaDB vector store was used to embed all chunks with text-embedding-3-small.
-Each agent then retrieved the {top_k} most semantically relevant chunk(s) via RAG similarity search.
-In 2-3 sentences explain what each agent receives and why RAG-based retrieval ensures relevant, focused coverage."""
+MISSING: [if NO — what makes it not a contract. If YES — write NONE]
+PLAN: [if YES — your orchestration plan. If NO — write NONE]"""
 
 EXTRACTOR_SYSTEM = """You are a legal clause extractor. Read the contract section neutrally — facts only, zero opinion.
 For every clause or section output:
@@ -455,32 +453,8 @@ async def analyze(
     if not contract_text:
         raise HTTPException(status_code=400, detail="Contract text is empty.")
 
-    # ── 2. STEP 1 — Validation (sequential) ─────────────────────────────────
+    # ── 2. STEP 1 — Chunking ────────────────────────────────────────────────
     log.info("═" * 60)
-    log.info("STEP 1 — Validation  (sequential)")
-    log.info("═" * 60)
-
-    validation_result = await call_openai(
-        VALIDATION_SYSTEM,
-        f"Document content (first 1500 characters):\n{contract_text[:1500]}",
-        max_tokens=200,
-    )
-    log.info("Validation result:\n%s", validation_result)
-
-    is_valid      = parse_field(validation_result, "VALID") == "YES"
-    document_type = parse_field(validation_result, "DOCUMENT_TYPE") or "Unknown"
-    reason        = parse_field(validation_result, "REASON")
-    missing       = parse_field(validation_result, "MISSING")
-
-    if not is_valid:
-        log.warning("REJECTED — type: %s | reason: %s", document_type, reason)
-        return JSONResponse(content={"valid": False, "documentType": document_type,
-                                     "reason": reason, "missing": missing})
-
-    log.info("VALID — type: %s", document_type)
-
-    # ── 3. Chunk the contract ────────────────────────────────────────────────
-    log.info("─" * 60)
     log.info("Chunking  (%d total chars)", len(contract_text))
     chunks      = chunker.chunk(contract_text)
     chunk_count = len(chunks)
@@ -490,17 +464,29 @@ async def analyze(
         log.info("  Chunk %d: %d chars | has_overlap=%s",
                  i + 1, len(c["text"]), c["has_overlap"])
 
-    # ── 4. STEP 2 — Orchestrator (sequential) ────────────────────────────────
+    # ── 3. STEP 2 — Orchestrator Gate (validation + planning) ───────────────
     log.info("─" * 60)
-    log.info("STEP 2 — Orchestrator planning  (sequential)")
-    orch_plan = await call_openai(
+    log.info("STEP 1 & 2 combined — Orchestrator Gate  (sequential)")
+    
+    validation_result = await call_openai(
         orchestrator_system(chunk_count, top_k),
-        f"Contract type: {document_type}\nChunks: {chunk_count}\n"
-        f"RAG top-k per agent: {top_k}\n"
-        f"Preview: {contract_text[:400]}",
-        max_tokens=300,
+        f"Document preview (first 1500 chars):\n{contract_text[:1500]}",
+        max_tokens=400,
     )
-    log.info("Orchestrator plan:\n%s", orch_plan)
+    log.info("Orchestrator result:\n%s", validation_result)
+
+    is_valid      = parse_field(validation_result, "VALID") == "YES"
+    document_type = parse_field(validation_result, "DOCUMENT_TYPE") or "Unknown"
+    reason        = parse_field(validation_result, "REASON")
+    missing       = parse_field(validation_result, "MISSING")
+    orch_plan     = parse_field(validation_result, "PLAN")
+
+    if not is_valid:
+        log.warning("REJECTED — type: %s | reason: %s", document_type, reason)
+        return JSONResponse(content={"valid": False, "documentType": document_type,
+                                     "reason": reason, "missing": missing})
+
+    log.info("VALID — type: %s", document_type)
 
     # ── 5. STEP 3 — Embed chunks + store in ChromaDB ─────────────────────────
     log.info("─" * 60)
